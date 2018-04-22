@@ -6,7 +6,7 @@ class HomePage extends React.Component {
     return (
       <div className="jumbotron">
         <h1>React Slingshot for Interviews</h1>
-        <p>Uses REact, Redux and React Router in ES6</p>
+        <p>Uses React, Redux and React Router in ES6</p>
         <Link to="about" className="btn btn-primary btn-lg">Learn More</Link>
       </div>
     );
