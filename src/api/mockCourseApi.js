@@ -10,7 +10,8 @@ const courses = [
     watchHref: "http://www.pluralsight.com/courses/react-flux-building-applications",
     authorId: "cory-house",
     length: "5:08",
-    category: "JavaScript"
+    category: "JavaScript",
+    description: "Take a deep breath. Exhale and let the muscles in your shoulders drop and relax. Who is really in pain when we hold on to resentments and grudges? Stop and take a slow breath. Panic is your body revving up temporarily, but it will slow down. Reflect on the fragility and preciousness of life. Stop and take a slow breath. Open your heart to change, forgiveness and lovingkindness."
   },
   {
     id: "clean-code",
@@ -18,7 +19,8 @@ const courses = [
     watchHref: "http://www.pluralsight.com/courses/writing-clean-code-humans",
     authorId: "cory-house",
     length: "3:10",
-    category: "Software Practices"
+    category: "Software Practices",
+    description: "Empty your mind; be formless, shapeless like water. It will be ok. Feelings come and go like clouds in a windy sky. Feelings come and go like clouds in a windy sky. You can do what you set out to do; yes, you can."
   },
   {
     id: "architecture",
@@ -26,7 +28,8 @@ const courses = [
     watchHref: "http://www.pluralsight.com/courses/architecting-applications-dotnet",
     authorId: "cory-house",
     length: "2:52",
-    category: "Software Architecture"
+    category: "Software Architecture",
+    description: "Give yourself a break. Open your heart to love as boundless as the sun, the moon, the stars. Give yourself a break. Live life one inhalation and one exhalation at a time."
   },
   {
     id: "career-reboot-for-developer-mind",
@@ -34,7 +37,8 @@ const courses = [
     watchHref: "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
     authorId: "cory-house",
     length: "2:30",
-    category: "Career"
+    category: "Career",
+    description: "Open your heart's eyes. Stop and take a slow breath. Open your heart's eyes. Who is really in pain when we hold on to resentments and grudges? May you be safe. Bring love into your heart, into your breath and into your being. Anxiety and panic will pass."
   },
   {
     id: "web-components-shadow-dom",
@@ -42,7 +46,8 @@ const courses = [
     watchHref: "http://www.pluralsight.com/courses/web-components-shadow-dom",
     authorId: "cory-house",
     length: "5:10",
-    category: "HTML5"
+    category: "HTML5",
+    description: "Feelings come and go like clouds in a windy sky. Feelings come and go like clouds in a windy sky. You can do what you set out to do; yes, you can."
   }
 ];
 
