@@ -5,48 +5,58 @@ import * as courseActions from '../../actions/courseActions';
 import CourseForm from './CourseForm';
 
 class ManageCoursePage extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+  constructor(props, context) {
+    super(props, context);
 
-        this.state = {
-          course: Object.assign({}, props.initialCourse),
-          errors: {}
-        };
-    }
+    this.state = {
+      course: Object.assign({}, props.course),
+      errors: {}
+    };
+  }
 
-    render() {
+  render() {
 
-        return (
-          <div>
-            <h1>Manage Course</h1>
-            <CourseForm
-              allAuthors={[]}
-              course={this.state.course}
-              errors={this.state.errors}
-            />
-          </div>
-        );
-    }
+    return (
+      <div>
+        <h1>Manage Course</h1>
+        <CourseForm
+          allAuthors={this.props.authors}
+          course={this.state.course}
+          errors={this.state.errors}
+        />
+      </div>
+    );
+  }
 }
 
 ManageCoursePage.propTypes = {
-    course: PropTypes.object.isRequired
+  course: PropTypes.object.isRequired,
+  authors: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
   let initialCourse = {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''};
-  return {
-        initialCourse: initialCourse
+
+  const authorsFormattedForDropdown = state.authors.map(author => {
+    return {
+      value: author.id,
+      text: author.firstName + ' ' + author.lastName
     };
+  });
+
+  return {
+    course: initialCourse,
+    authors: authorsFormattedForDropdown
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(courseActions, dispatch)
-    };
+  return {
+    actions: bindActionCreators(courseActions, dispatch)
+  };
 }
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(ManageCoursePage);
