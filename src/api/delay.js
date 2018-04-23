@@ -1,1 +1,2 @@
-export default 0;
+//simulated delay of each mock api call
+export default 1000;

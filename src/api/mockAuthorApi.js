@@ -10,8 +10,8 @@ const authors = [
     lastName: 'House'
   },
   {
-    id: 'scott-allen',
-    firstName: 'Scott',
+    id: 'stacy-allen',
+    firstName: 'Stacy',
     lastName: 'Allen'
   },
   {
