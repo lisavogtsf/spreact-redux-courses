@@ -2,15 +2,15 @@ import * as types from './actionTypes';
 import courseApi from '../api/mockCourseApi';
 
 export function loadCoursesSuccess(courses) {
-  return { type: types.LOAD_COURSES_SUCCESS, courses }
+  return { type: types.LOAD_COURSES_SUCCESS, courses };
 }
 
 export function createCourseSuccess(course) {
-  return { type: types.CREATE_COURSE_SUCCESS, course }
+  return { type: types.CREATE_COURSE_SUCCESS, course };
 }
 
 export function updateCourseSuccess(course) {
-  return { type: types.UPDATE_COURSE_SUCCESS, course }
+  return { type: types.UPDATE_COURSE_SUCCESS, course };
 }
 
 export function loadCourses() {
