@@ -6,6 +6,7 @@ import TestUtils from "react-addons-test-utils";
 
 function setup(loading) {
   const props = {
+    allAuthors: [],
     course: {},
     errors: {},
     loading: loading,

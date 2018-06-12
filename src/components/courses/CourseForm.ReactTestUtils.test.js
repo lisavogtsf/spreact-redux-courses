@@ -5,6 +5,7 @@ import CourseForm from './CourseForm';
 
 function setup(loading) {
   let props = {
+    allAuthors: [],
     course: {},
     errors: {},
     loading: loading,
