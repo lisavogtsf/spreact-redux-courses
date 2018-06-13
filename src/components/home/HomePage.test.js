@@ -13,8 +13,8 @@ describe('HomePage', () => {
 
   it('links to the correct page (About)', () => {
     const wrapper = shallow(<HomePage/>);
-    const Anchor = wrapper.find('.btn.btn-primary.btn-lg');
-    expect(Anchor.props().children).toBe('Learn More');
-    expect(Anchor.props().to).toBe('about');
+    const primaryButton = wrapper.find('.btn.btn-primary.btn-lg');
+    expect(primaryButton.props().children).toBe('Learn More');
+    expect(primaryButton.props().to).toBe('about');
   });
 });
