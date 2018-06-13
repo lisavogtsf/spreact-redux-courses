@@ -5,7 +5,7 @@ import * as courseActions from '../../actions/courseActions';
 import CourseList from './CourseList';
 import { browserHistory } from 'react-router';
 
-class CoursesPage extends React.Component {
+export class CoursesPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.redirectToAddCoursePage = this.redirectToAddCoursePage.bind(this);
