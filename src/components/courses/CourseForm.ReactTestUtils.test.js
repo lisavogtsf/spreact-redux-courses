@@ -29,6 +29,7 @@ describe('CourseForm via React Test Utils', () => {
     const { output } = setup();
 
     expect(output.type).toBe('form');
+    // let [ firstChild ] = output.props.children;
     let firstChild = output.props.children[0];
     expect(firstChild.type).toBe('h1');
   });
@@ -39,9 +40,9 @@ describe('CourseForm via React Test Utils', () => {
     expect(sixthChild.props.value).toBe('Save');
   });
 
-  it('renders a save button labeled "Saving" when saving', () => {
+  it('renders a save button labeled "Saving..." when saving', () => {
     const { output } = setup(true);
     const sixthChild = output.props.children[5];
-    expect(sixthChild.props.value).toContain('Saving');
+    expect(sixthChild.props.value).toBe('Saving...');
   });
 });
