@@ -3,12 +3,12 @@ import expect from 'expect';
 import { mount, shallow } from 'enzyme';
 import CourseForm from './CourseForm';
 
-function setup(loading) {
+function setup(saving) {
   const props = {
     allAuthors: [],
     course: {},
     errors: {},
-    loading: loading,
+    saving: saving,
     onSave: () => {},
     onChange: () => {}
   };

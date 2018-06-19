@@ -3,12 +3,12 @@ import expect from 'expect';
 import TestUtils from 'react-addons-test-utils';
 import CourseForm from './CourseForm';
 
-function setup(loading) {
+function setup(saving) {
   let props = {
     allAuthors: [],
     course: {},
     errors: {},
-    loading: loading,
+    saving: saving,
     onSave: () => {},
     onChange: () => {}
   };

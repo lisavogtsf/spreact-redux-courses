@@ -11,7 +11,8 @@ export class ManageCoursePage extends React.Component {
 
     this.state = {
       course: Object.assign({}, props.course),
-      errors: {}
+      errors: {},
+      saving: false
     };
 
     this.updateCourseState = this.updateCourseState.bind(this);
@@ -46,12 +47,17 @@ export class ManageCoursePage extends React.Component {
 
   saveCourse(event) {
     event.preventDefault();
-
+    this.setState({saving: true});
     if(!this.courseFormIsValid()) {
       return;
     }
 
-    this.props.actions.saveCourse(this.state.course);
+    this.props.actions.saveCourse(this.state.course)
+      .then(() => this.redirect());
+  }
+
+  redirect() {
+    this.setState({saving: false});
     this.context.router.push('/courses');
   }
 
@@ -64,6 +70,7 @@ export class ManageCoursePage extends React.Component {
           onSave={this.saveCourse}
           course={this.state.course}
           errors={this.state.errors}
+          saving={this.state.saving}
         />
       </div>
     );
