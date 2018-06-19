@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import toastr from 'toastr';
 import * as courseActions from '../../actions/courseActions';
 import CourseForm from './CourseForm';
 import { authorsFormattedForDropdown } from "../../selectors/selectors";
@@ -32,32 +33,21 @@ export class ManageCoursePage extends React.Component {
     return this.setState({course: course});
   }
 
-  courseFormIsValid() {
-    let formIsValid = true;
-    let errors = {};
-
-    if (this.state.course.title.length < 5) {
-      errors.title = 'Title must be at least 5 characters.';
-      formIsValid = false;
-    }
-
-    this.setState({errors: errors});
-    return formIsValid;
-  }
-
   saveCourse(event) {
     event.preventDefault();
     this.setState({saving: true});
-    if(!this.courseFormIsValid()) {
-      return;
-    }
 
     this.props.actions.saveCourse(this.state.course)
-      .then(() => this.redirect());
+      .then(() => this.redirect())
+      .catch(error => {
+        toastr.error(error);
+        this.setState({saving: false});
+      });
   }
 
   redirect() {
     this.setState({saving: false});
+    toastr.success('Course saved');
     this.context.router.push('/courses');
   }
 
