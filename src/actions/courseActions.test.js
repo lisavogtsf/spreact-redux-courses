@@ -25,6 +25,7 @@ describe('Course Actions', () => {
   });
 });
 
+// include thunk in mock store
 const middleware = [ thunk ];
 const mockStore = configureMockStore(middleware);
 
