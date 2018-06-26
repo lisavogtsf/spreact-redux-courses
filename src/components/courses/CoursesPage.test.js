@@ -25,7 +25,7 @@ describe('CoursesPage', () => {
     expect(header.text()).toBe('Courses');
   });
 
-  describe('Add Course button', () => {
+  describe('"Add Course" button', () => {
     it('renders button with Add Course text', () => {
       const button = wrapper.find('.btn.btn-primary');
       expect(button.props().value).toBe('Add Course');
@@ -35,15 +35,37 @@ describe('CoursesPage', () => {
   });
 
   describe('CourseList component', () => {
-    it('renders a CourseList component', () => {
-      const courseList = wrapper.find(CourseList);
-      expect(courseList.length).toEqual(1);
+    describe('when there are courses', () => {
+      it('renders a CourseList component', () => {
+        const courseList = wrapper.find(CourseList);
+        expect(courseList.length).toEqual(1);
+      });
+
+      it('passes the correct data to CourseList', () => {
+        const courseList = wrapper.find(CourseList);
+        expect(courseList.get(0).props.courses).toEqual(courses);
+      });
     });
 
-    it('passes the correct data to CourseList', () => {
-      const courseList = wrapper.find(CourseList);
-      expect(courseList.get(0).props.courses).toEqual(courses);
+    describe('when there are no courses', () => {
+      beforeEach(() => {
+        courses = [];
+        props = {
+          courses: courses,
+          actions: {}
+        };
+
+        wrapper = shallow(<CoursesPage {...props}/>);
+      });
+
+      it('shows a message that there are no courses', () => {
+        const message = wrapper.find('.empty-courses-message');
+        expect(message.text()).toBe('No courses available');
+      });
+
+      it('does not render the CourseList', () => {
+        expect(wrapper.find(CourseList).length).toEqual(0);
+      });
     });
   });
-
 });

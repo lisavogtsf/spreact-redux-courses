@@ -27,7 +27,7 @@ export class CoursesPage extends React.Component {
           className="btn btn-primary"
           onClick={this.redirectToAddCoursePage}
         />
-        <CourseList courses={courses}/>
+        {courses.length ? <CourseList courses={courses}/> : <h2 className="empty-courses-message">No courses available</h2>}
       </div>
     );
   }
